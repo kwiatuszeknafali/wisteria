@@ -1,34 +1,22 @@
-# dependencies (bun install)
+# Operating System
+.DS_Store
+Thumbs.dll
+
+# Environment
+.env
+
+# Dependencies
 node_modules
 
-# output
-out
+# SST
+.sst
+
+# Vite
 dist
-*.tgz
 
-# code coverage
+# Runtime
+.dev.vars
+.wrangler
+
+# Vitest
 coverage
-*.lcov
-
-# logs
-logs
-_.log
-report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
-
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
-# caches
-.eslintcache
-.cache
-*.tsbuildinfo
-
-# IntelliJ based IDEs
-.idea
-
-# Finder (MacOS) folder config
-.DS_Store
