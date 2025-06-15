@@ -3,5 +3,47 @@
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",
-	"workspaces": ["services/*", "gateway"]
+	"workspaces": [
+		"services/*"
+	],
+	"scripts": {
+		"types": "bun --filter '*' types",
+		"codecheck": "biome check --write",
+		"test:all": "vitest",
+		"test:all:cov": "vitest --coverage",
+		"test:gw": "vitest --project gateway",
+		"test:gw:cov": "cd gateway && vitest run --coverage",
+		"test:auth": "vitest --project @services/auth",
+		"test:auth:cov": "cd services/auth && vitest run --coverage",
+		"test:ntf": "vitest --project @services/notification",
+		"test:ntf:cov": "cd services/notification && vitest run --coverage",
+		"test:order": "vitest --project @services/order",
+		"test:order:cov": "cd services/order && vitest run --coverage",
+		"test:product": "vitest --project @services/product",
+		"test:product:cov": "cd services/product && vitest run --coverage",
+		"test:user": "vitest --project @services/notification",
+		"test:user:cov": "cd services/user && vitest run --coverage",
+		"test:unit:all": "vitest test/unit",
+		"test:unit:gw": "vitest --project gateway test/unit",
+		"test:unit:auth": "vitest --project @services/auth test/unit",
+		"test:unit:notification": "vitest --project @services/notification test/unit",
+		"test:unit:order": "vitest --project @services/order test/unit",
+		"test:unit:product": "vitest --project @services/product test/unit",
+		"test:unit:user": "vitest --project @services/user test/unit",
+		"test:int:all": "vitest test/integration",
+		"test:int:auth": "vitest --project @services/auth test/integration",
+		"test:int:notification": "vitest --project @services/notification test/integration",
+		"test:int:order": "vitest --project @services/order test/integration",
+		"test:int:product": "vitest --project @services/product test/integration",
+		"test:int:user": "vitest --project @services/user test/integration"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.0-beta.5",
+		"@cloudflare/vite-plugin": "^1.6.0",
+		"@cloudflare/vitest-pool-workers": "^0.8.19",
+		"typescript": "^5.5.2",
+		"vite": "^6.3.5",
+		"vitest": "~3.2.0",
+		"wrangler": "^4.20.0"
+	}
 }
